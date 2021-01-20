@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+
+<style>
+        #fundal{
+           background-color: beige;       
+        }
+        h5{
+            color: rgb(51, 26, 9);
+            padding: 10;
+        }
+        p{
+            color: rgb(59, 33, 14);
+            padding: 10;
+        }
+
+</style>
+<div id="fundal">
+<h1>{{ produs.title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        
+        <img src="{% static produs.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>Despre produs:</h5>
+        <p>{{ produs.descriere }}</p>
+        <br>
+        <h5>Pret:</h5>
+        <p>{{ produs.pret }} RON</p>
+        <a class="btn btn-success">
+        Adauga in cos
+     </a>
+    </div>
+</div>
+</div>
+{% endblock %}

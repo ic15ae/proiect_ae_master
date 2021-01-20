@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h4></h4>
+<style>
+    h1 {
+        color: rgb(224, 224, 224);
+        text-align: center;
+    }
+    .card{
+        background-color: rgb(243, 228, 199);
+    }
+</style>
+
+<h1>Produse</h1>
+<div class="row">
+{% for produs in produse %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static produs.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ produs.titlu }}</h5>
+                <p class="card-text">{{ produs.descriere }}</p>
+                <a href="{% url 'produse_detail' produs.pk %}"
+                   class="btn btn-success">
+                   Afla detalii
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
